@@ -1,0 +1,46 @@
+#calendar{
+  display: grid;                          /* dispone i figli a griglia */
+  grid-template-columns: repeat(7, 1fr);  /* 7 colonne di uguale larghezza */
+  text-align: center;
+  gap: 8px;                               /* spazio tra le caselle */
+}
+
+#month-title {
+  text-align: center;
+}
+
+#month-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#month-header button {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #3D004F;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.weekday {
+  font-size: 15px;
+  color: #8a7fa8;
+}
+
+#calendar div {
+  height: 32px;
+  line-height: 32px;
+}
+
+.today {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;     /* centra il numero in verticale */
+  margin: 0 auto;        /* centra il cerchio nella colonna */
+  border-radius: 50%;    /* un quadrato con gli angoli arrotondati al 50% diventa un cerchio */
+  background: #3D004F;
+  color: white;
+}

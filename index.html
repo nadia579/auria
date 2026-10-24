@@ -8,11 +8,18 @@
   <meta name="theme-color" content="#3D004F">
   <!--dice al browser dove trovare la "carta d'identità" dell'app-->
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
 
   <title>Auria</title>
 </head>
 <body>
   <h1>Auria</h1>
+    <div id="month-header">
+    <button id="prev-month">‹</button>
+    <h2 id="month-title"></h2>
+    <button id="next-month">›</button>
+  </div>
+  <div id="calendar"></div>
   <script src="app.js"></script>
   <script>
     //registra il service worker solo se il browser lo supporta
