@@ -1,11 +1,12 @@
 // Nome della cache. Quando cambi i file dell'app, aumenta il numero (v2, v3...)
 // così il telefono scarica la versione nuova invece di tenersi la vecchia.
-const CACHE = 'auria-v1';
-
+const CACHE = 'auria-v2';
 // I file necessari per aprire l'app anche offline
+
 const FILES = [
   './',
   './index.html',
+  './app.js',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png',
