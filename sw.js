@@ -1,6 +1,6 @@
 // Nome della cache. Quando cambi i file dell'app, aumenta il numero (v2, v3...)
 // così il telefono scarica la versione nuova invece di tenersi la vecchia.
-const CACHE = 'auria-v3';
+const CACHE = 'auria-v4';
 // I file necessari per aprire l'app anche offline
 
 const FILES = [
@@ -21,9 +21,12 @@ const FILES = [
 // (come aspettare che un Mono termini).
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(FILES))
+    caches.open(CACHE).then((cache) =>
+      // cache: 'reload' = ignore the browser's HTTP cache and always download fresh files
+      cache.addAll(FILES.map((file) => new Request(file, { cache: 'reload' })))
+    )
   );
-  self.skipWaiting(); // attiva subito la nuova versione, senza aspettare
+  self.skipWaiting();
 });
 
 // ACTIVATE: scatta quando questa versione prende il controllo.
