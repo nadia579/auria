@@ -1,0 +1,23 @@
+.screen {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  background:
+    radial-gradient(100% 60% at 50% 0%, #6A2A86 0%, transparent 60%),
+    linear-gradient(160deg, var(--night-2), var(--night-1));
+}
+
+.logo { width: 84px; height: 84px; border-radius: 22px; }
+
+.name {
+  margin: 4px 0 28px;
+  font-family: var(--font-script);
+  font-size: 46px;
+  color: var(--gold-bright);
+}
+
+.finger { color: var(--gold-bright) !important; background: none !important; }
+.finger svg { width: 34px !important; height: 34px !important; }

@@ -1,0 +1,127 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.todayLink {
+  display: block;
+  margin: 0 auto 4px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--violet-2);
+}
+
+/* 7 columns, no gap between columns so bands can join */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 6px;
+  margin-top: 8px;
+}
+
+.weekday {
+  padding-bottom: 4px;
+  text-align: center;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.day {
+  position: relative;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.future { font-weight: 600; }
+
+.number {
+  width: 34px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+}
+
+.dots {
+  height: 5px;
+  display: flex;
+  gap: 3px;
+}
+
+.dots i, .legend i { display: inline-block; }
+
+/* --- Bands --- */
+
+.period { background: var(--period); color: white; }
+@media (prefers-color-scheme: dark) { .period { color: #22101C; } }
+
+.predicted {
+  background:
+    repeating-linear-gradient(-45deg, var(--period-soft) 0 4px, transparent 4px 8px);
+  box-shadow: inset 0 1.5px 0 var(--period), inset 0 -1.5px 0 var(--period);
+}
+
+.fertile { background: var(--gold-soft); }
+
+.bandStart { border-top-left-radius: 22px; border-bottom-left-radius: 22px; }
+.bandEnd { border-top-right-radius: 22px; border-bottom-right-radius: 22px; }
+
+.predicted.bandStart { box-shadow: inset 1.5px 1.5px 0 var(--period), inset 0 -1.5px 0 var(--period); }
+.predicted.bandEnd { box-shadow: inset -1.5px 1.5px 0 var(--period), inset 0 -1.5px 0 var(--period); }
+.predicted.bandStart.bandEnd { box-shadow: inset 0 0 0 1.5px var(--period); }
+
+/* --- Rings around the number --- */
+
+.today .number { box-shadow: inset 0 0 0 2px var(--violet); }
+.period.today .number { box-shadow: inset 0 0 0 2px white; }
+.ovulation .number { box-shadow: inset 0 0 0 2px var(--gold); }
+
+/* --- Dots under the number --- */
+
+.dotMigraine { width: 5px; height: 5px; border-radius: 50%; background: var(--violet-2); }
+.dotLogged { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+.period .dotMigraine, .period .dotLogged { background: white; }
+
+/* --- Legend --- */
+
+.legend {
+  margin: 14px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.legend li { display: flex; align-items: center; gap: 6px; }
+
+.swPeriod, .swPredicted, .swFertile { width: 16px; height: 12px; border-radius: 6px; }
+.swPeriod { background: var(--period); }
+.swPredicted { box-shadow: inset 0 0 0 1.5px var(--period); background: var(--period-soft); }
+.swFertile { background: var(--gold-soft); box-shadow: inset 0 0 0 1px var(--gold); }

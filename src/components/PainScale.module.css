@@ -1,0 +1,26 @@
+.scale {
+  display: grid;
+  gap: 6px;
+}
+
+.step {
+  aspect-ratio: 1;
+  max-height: 52px;
+  justify-self: center;
+  width: 100%;
+  max-width: 52px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  /* --level goes from 0.2 to 1: mixes more violet into the soft background */
+  background: color-mix(in srgb, var(--violet-2) calc(var(--level) * 45%), var(--violet-soft));
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--violet);
+}
+
+.step[aria-pressed="true"] {
+  background: var(--violet);
+  color: var(--on-violet);
+  box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--gold);
+}

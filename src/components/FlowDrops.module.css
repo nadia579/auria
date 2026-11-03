@@ -1,0 +1,21 @@
+.drops {
+  display: flex;
+  justify-content: space-between;
+  max-width: 300px;
+}
+
+.drop {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--period-soft);
+  color: var(--period);
+  transition: transform 0.12s;
+}
+
+.drop:active { transform: scale(0.92); }
+.drop svg { width: 32px; height: 32px; }

@@ -1,0 +1,52 @@
+.todayTag {
+  margin-left: 8px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 800;
+  vertical-align: middle;
+}
+
+.spaced { margin-bottom: 14px; }
+
+.status {
+  margin: 0 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.status strong { color: var(--gold); }
+
+.attack {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 14px;
+  background: var(--surface-2);
+  text-align: left;
+  font-weight: 700;
+}
+
+.attack small { display: block; font-weight: 500; color: var(--muted); }
+
+.attackLevel {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--violet);
+  color: var(--on-violet);
+  font-size: 18px;
+  font-weight: 800;
+}

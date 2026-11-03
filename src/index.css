@@ -1,0 +1,90 @@
+/* Design tokens: every colour and size of the app is defined here, once.
+   Change a value and it changes everywhere. Dark mode follows the phone setting. */
+:root {
+  --bg: #F6F2FA;
+  --surface: #FFFFFF;
+  --surface-2: #EFE8F6;
+  --ink: #2A0838;
+  --muted: #7E6F91;
+  --line: #E4DCEE;
+
+  --violet: #3D004F;          /* main colour, from the logo */
+  --violet-2: #6B3A8C;
+  --violet-soft: #E9DDF5;
+  --on-violet: #FFFFFF;       /* text on a violet background */
+  --gold: #B8862F;
+  --gold-bright: #D4AF61;     /* gold on dark backgrounds */
+  --gold-soft: #F6ECD6;
+
+  --period: #B5589A;          /* logged period */
+  --period-soft: #F4DDEB;
+  --danger: #C2405B;
+
+  /* The night card at the top of the home page stays dark in both themes */
+  --night-1: #2A0838;
+  --night-2: #4A1460;
+
+  --icon-size: 64px;          /* round icons in the day page */
+  --radius: 20px;
+  --tabbar-h: 68px;
+
+  --font: "Nunito Variable", "Nunito", system-ui, sans-serif;
+  --font-script: "Pinyon Script", cursive;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #140A1C;
+    --surface: #20132B;
+    --surface-2: #2B1C39;
+    --ink: #F2EAF8;
+    --muted: #A796B8;
+    --line: #3A2850;
+
+    --violet: #CDB4F0;
+    --violet-2: #A07CC9;
+    --violet-soft: #33204A;
+    --on-violet: #1B0E26;
+    --gold: #E3BE6E;
+    --gold-soft: #3A2E1A;
+
+    --period: #E07AB8;
+    --period-soft: #4A2340;
+    --danger: #F07A93;
+  }
+}
+
+/* Nunito, latin letters only (the package also has cyrillic, vietnamese...: not needed, saves space) */
+@font-face {
+  font-family: "Nunito Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 1000;
+  src: url("@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2-variations");
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+h1, h2, h3 { line-height: 1.2; }
+:focus-visible { outline: 2.5px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
+[hidden] { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

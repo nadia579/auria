@@ -1,0 +1,67 @@
+.pad {
+  --key-bg: var(--surface-2);
+  --key-fg: var(--ink);
+  --dot: var(--violet);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* On the lock screen the pad sits on the night background */
+.dark {
+  --key-bg: rgba(255, 255, 255, 0.08);
+  --key-fg: #F4ECFA;
+  --dot: var(--gold-bright);
+  color: #F4ECFA;
+}
+
+.title { margin: 0 0 18px; font-size: 17px; font-weight: 700; }
+
+.dots { display: flex; gap: 16px; }
+
+.dots span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--dot);
+  transition: background 0.1s;
+}
+
+.dots span.on { background: var(--dot); }
+
+.shake { animation: shake 0.35s; }
+
+@keyframes shake {
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-4px); }
+}
+
+.error { min-height: 22px; margin: 10px 0; font-size: 14px; font-weight: 700; color: var(--danger); }
+.dark .error { color: #F7A3B6; }
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(3, 72px);
+  gap: 14px 22px;
+}
+
+.keys button, .extra {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.keys button {
+  border: none;
+  background: var(--key-bg);
+  color: var(--key-fg);
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.keys button:active { filter: brightness(1.3); }
+.keys .erase { background: none; }
+.keys svg { width: 28px; height: 28px; }
